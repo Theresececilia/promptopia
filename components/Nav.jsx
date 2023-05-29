@@ -5,11 +5,11 @@ import Link from "next/link"
 import Image from "next/image"
 
 const Nav = () => {
-  const {data: session } = useSession()
+  const {data: session, status } = useSession()
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false)
   const isUserLoggedIn = true;
-  
+  console.log(session, status)
   useEffect(() => {
     const setUpProviders = async () => {
       const response = await getProviders()
